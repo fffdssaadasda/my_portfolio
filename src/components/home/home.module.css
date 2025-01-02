@@ -1,0 +1,21 @@
+.greet {
+  transform-origin: bottom right;
+  transform: rotate(0deg) scale(1);
+  display: inline-block;
+  width: fit-content;
+  animation: greet 0.4s ease-in 3 alternate-reverse;
+  transition: 0.3s all ease-in-out;
+}
+
+@keyframes greet {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(20deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
