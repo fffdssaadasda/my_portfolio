@@ -3,7 +3,7 @@ import Notifecation from "@/components/Notifecation"
 import WrapperSections from "@/components/WrapperSections"
 import google from '@/imgs/2993685_brand_brands_google_logo_logos_icon.png'
 import facebook from '@/imgs/5296499_fb_facebook_facebook logo_icon.png'
-import axios, { AxiosResponse } from "axios"
+import axios, { Axios, AxiosError, AxiosResponse } from "axios"
 import { signIn } from "next-auth/react"
 import { FormEventHandler, useState } from "react"
 // Login =>  https://firsttestapp-tb73wp5t.b4a.run/users/login
@@ -25,8 +25,8 @@ const page = () => {
                 }
             })
             console.log(data);
-        } catch ({ response }) {
-            setMessage(response.data.err)
+        } catch (err: any) {
+            setMessage(err?.response?.data.err)
         }
         // if (!data) {
         // }
