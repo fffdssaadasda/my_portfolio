@@ -39,8 +39,6 @@ const ProjectItem = ({
     });
   }, [index]);
   const [techs] = technologies;
-  console.log(link);
-
   return (
     <>
       <WrapperSections isFull>
@@ -59,7 +57,6 @@ const ProjectItem = ({
             {/* <h4 className="text-[4vw] max-sm:text-[25px]">{date}</h4> */}
           </div>
         </section>
-
         <section className="flex flex-col mt-[15px] overflow-hidden gap-3">
           {/* Images */}
           <div ref={imgsContainer} className="flex gap-2 ">
@@ -84,28 +81,31 @@ const ProjectItem = ({
           </div>
           {/* Images */}
           <p>{description}</p>
-          <section className="flex gap-2 items-center">
-            <span
-              onClick={() => {
-                if (index > -images?.length) {
-                  setIndex((prev) => (prev -= 1));
-                }
-              }}
-              className="size-[40px] text-[22px] cursor-pointer bg-black text-white flex items-center justify-center"
-            >
-              <IoIosArrowBack />
-            </span>
-            <span
-              onClick={() => {
-                if (index < 0) {
-                  setIndex((prev) => (prev += 1));
-                }
-              }}
-              className="size-[40px] text-[22px] cursor-pointer bg-black text-white flex items-center justify-center"
-            >
-              <IoIosArrowForward />
-            </span>
-          </section>
+          {images?.length > 1 &&
+
+            <section className="flex gap-2 items-center">
+              <span
+                onClick={() => {
+                  if (index > -images?.length) {
+                    setIndex((prev) => (prev -= 1));
+                  }
+                }}
+                className="size-[40px] text-[22px] cursor-pointer bg-black text-white flex items-center justify-center"
+              >
+                <IoIosArrowBack />
+              </span>
+              <span
+                onClick={() => {
+                  if (index < 0) {
+                    setIndex((prev) => (prev += 1));
+                  }
+                }}
+                className="size-[40px] text-[22px] cursor-pointer bg-black text-white flex items-center justify-center"
+              >
+                <IoIosArrowForward />
+              </span>
+            </section>
+          }
         </section>
         <section className="flex items-center mt-[15px] flex-wrap gap-2">
           {techs.split(" ").map((tech: string) => (

@@ -23,17 +23,16 @@ const PortfolioPage = () => {
         queryKey: ["projects"],
         queryFn: () => getData(`${api}/projects`),
     });
-
+    const projects = useQueryClient().getQueryData<Project[]>(["projects"]);
     if (projectType.get("type") !== "all") {
         data = data?.filter((e: Project) => e.projectType === "all" ? e : e.projectType === projectType.get("type"))
     }
-    // console.log(data?.filter(e => e.projectType === "all" ? e : e.projectType === projectType.get("type")));
-    console.log(data);
-
+    const front = (projects?.filter((e: Project) => e.projectType === "front_end"))
+    const back = (projects?.filter((e: Project) => e.projectType === "back_end"))
+    console.log(projects);
     // const data: Project[] = await
     return (
         <>
-
             {/* <PageTransition> */}
             <WrapperSections isFull>
                 <HeadingTitle title="PORTFOLIO" />
@@ -45,7 +44,12 @@ const PortfolioPage = () => {
                         // projectType.
                         router.push(`${pathname}?type=${e.split(" ").join("_").toLowerCase()}`)
                         // .set("type", type.type)
-                    }} className={`p-[10px] px-[25px] transition-all duration-[200ms] font-semibold text-[22px] cursor-pointer hover:bg-[#eee] ${idx === i ? "bg-[#000] text-white hover:!bg-[#000]" : ""}`}>{e}</div>
+                    }} className={`p-[10px] px-[25px] flex items-center gap-1 transition-all duration-[200ms] font-semibold text-[22px] cursor-pointer hover:bg-[#eee] ${idx === i ? "bg-[#000] text-white hover:!bg-[#000]" : ""}`}>{e}
+                        <span className={`size-[30px] flex text-black  items-center justify-center rounded-[50%] ${i === idx ? "bg-white" : "bg-black text-white"} `}>
+                            {i === 0 ? projects?.length : i === 1 ? front?.length : i === 2 && back?.length}
+                            {!front || !back ? <Loader color={i !== idx ? "#fff" : "#000"} height="20px" width="20px" /> : ""}
+                        </span>
+                    </div>
                 ))}
             </section>
             <section className="grid lg:grid-cols-3 max-sm:grid-cols-1 md:grid-cols-2 gap-3 mt-[15px] items-center">
