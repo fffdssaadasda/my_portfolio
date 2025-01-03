@@ -6,4 +6,5 @@ export interface Project {
   description?: string;
   _id?: string;
   link?: string;
+  projectType?: string;
 }

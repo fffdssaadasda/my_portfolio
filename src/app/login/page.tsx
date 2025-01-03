@@ -58,7 +58,6 @@ const page = () => {
                         <div className="flex-1 h-[2px] bg-gradient-to-l from-[#bbb] to-white "></div>
                     </section>
                     <section className="flex items-center justify-center mt-[15px] gap-[5px]">
-
                         <div onClick={() => signIn('google', { redirectTo: "/" })} className="flex px-[10px] items-center transition-all duration-[300ms] rounded-[8px] gap-2 bg-white hover:bg-[#eee] cursor-pointer">
                             <img src={google.src} className="size-[50px] p-[10px] flex items-center justify-center" loading="lazy" alt="" />
                             <span>Sign In With Google</span>
