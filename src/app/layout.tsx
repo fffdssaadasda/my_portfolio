@@ -8,9 +8,7 @@ import { SessionProvider } from "next-auth/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 // const Header = dynamic(() => import('@/components/Header'), { ssr: false })
-const queryClient = new QueryClient({
-
-})
+const queryClient = new QueryClient()
 
 export default function RootLayout({
   children,
