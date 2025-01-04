@@ -31,7 +31,6 @@ const PortfolioPage = () => {
     }
     const front = (projects?.filter((e: Project) => e.projectType === "front_end"))
     const back = (projects?.filter((e: Project) => e.projectType === "back_end"))
-    console.log(projectType.get("type"));
     // const data: Project[] = await
     return (
         <>

@@ -20,7 +20,7 @@ export function AuthHeaderLinks() {
                     href={`/login`}
                     className="text-[20px] border-[1px]  bg-[#ffee32] border-[#000] border-b-[3px] border-solid p-[15px] rounded-[50px] py-[5px]"
                 >
-                    signin to publish new post
+                    signin
                 </Link>}
         </div>
     )

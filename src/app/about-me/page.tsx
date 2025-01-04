@@ -1,6 +1,15 @@
+import CommingSoon from "@/components/CommingSoon"
+import HeadingTitle from "@/components/HeadingTitle"
+import WrapperSections from "@/components/WrapperSections"
+
 const page = () => {
     return (
-        <div>about</div>
+        <>
+            <WrapperSections isFull>
+                <HeadingTitle title="about_me" />
+            </WrapperSections>
+            <CommingSoon />
+        </>
     )
 }
 
