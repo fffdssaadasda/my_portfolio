@@ -10,12 +10,14 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import Loader from "@/components/Loader";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
 const PortfolioPage = () => {
     const projectType = useSearchParams();
     const router = useRouter()
     const pathname = usePathname();
     const cats = ["All", "Front end", "Back end"]
     const [idx, setidx] = useState(0);
+
     useEffect(() => {
         router.push(`${pathname}?type=${cats[idx].split(" ").join("_").toLowerCase() || "all"}`)
     }, [])
@@ -29,7 +31,7 @@ const PortfolioPage = () => {
     }
     const front = (projects?.filter((e: Project) => e.projectType === "front_end"))
     const back = (projects?.filter((e: Project) => e.projectType === "back_end"))
-    console.log(projects);
+    console.log(projectType.get("type"));
     // const data: Project[] = await
     return (
         <>
@@ -64,9 +66,15 @@ const PortfolioPage = () => {
                         images={e.images}
                         technologies={e.technologies}
                         link={e.link}
+
                     />
                 ))}
+
             </section>
+            {!data?.length && <h1 className="text-[30px] flex items-center gap-4 justify-center font-semibold text-center">No {projectType.get("type")?.split("_").join(' ')} projects
+                
+            </h1>
+            }
             {/* </PageTransition> */}
         </>
     );
