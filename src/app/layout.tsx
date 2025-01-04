@@ -22,7 +22,7 @@ export default function RootLayout({
           <QueryClientProvider client={queryClient}>
             <ReactQueryDevtools />
             <Header />
-            <main className="mt-[15px]">{children}</main>
+            <main className="mt-[15px] relative top-[80px]">{children}</main>
           </QueryClientProvider>
         </SessionProvider>
       </body>

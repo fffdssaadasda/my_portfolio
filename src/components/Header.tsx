@@ -14,9 +14,9 @@ const Header = () => {
   const { data, status, } = useSession()
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
-    <section className="relative">
+    <section className="fixed top-[5px] z-[9999] bg-white  -translate-x-1/2 left-1/2 w-[95%] h-[60px]">
       <HeaderMobile setMenu={setToggleMenu} toggleMenu={toggleMenu} />
-      <section className="border-solid flex items-center justify-between p-[20px] py-[5px] border-[2px] rounded-[50px] border-[#000]  font-semibold">
+      <section className="border-solid flex items-center justify-between p-[20px] py-[5px] border-[3px] rounded-[50px] border-[#000]  font-semibold">
         {/* <PageTransition href={`/`}> */}
           <Link href={`/`} className="bg-black block rounded-md size-[50px]" >
           </Link>
