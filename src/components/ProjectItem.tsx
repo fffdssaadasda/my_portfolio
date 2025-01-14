@@ -72,7 +72,7 @@ const ProjectItem = ({
                   images.map((el: HTMLImageElement) => (
                     <img
                       key={el.src}
-                      src={`${api}/images/${el}`}
+                      src={`${api}/images/${el}` || ""}
                       className="min-w-[300px] max-h-[200px]"
                       alt="aaa"
                     />
@@ -109,7 +109,7 @@ const ProjectItem = ({
               }
             </section>
             <section className="flex items-center mt-[15px] flex-wrap gap-2">
-              {techs.split(" ").map((tech: string) => (
+              {techs?.split(" ").map((tech: string) => (
                 <div key={tech + Math.random()} className="px-[15px] py-[2px] bg-white hover:border-[#444] hover:bg-[#444] transition-all duration-[300ms] hover:text-white cursor-pointer rounded-md border-2 border-[#eee] text-center" >
                   {tech}
                 </div>
