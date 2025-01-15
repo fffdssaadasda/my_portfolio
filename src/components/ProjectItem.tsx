@@ -73,7 +73,7 @@ const ProjectItem = ({
                     <img
                       key={el.src}
                       src={`${api}/images/${el}` || ""}
-                      className="min-w-[300px] max-h-[200px]"
+                      className="min-w-[350px] max-h-[200px]"
                       alt="aaa"
                     />
                   ))
