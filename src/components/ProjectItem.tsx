@@ -25,7 +25,8 @@ const ProjectItem = ({
   title,
   date,
   description,
-  technologies, _id, link
+  technologies, _id, link,
+  previewImage
 }: Project) => {
   const imgsContainer = useRef(null);
   const [index, setIndex] = useState(0);
@@ -65,7 +66,7 @@ const ProjectItem = ({
                 {images?.length === 1 ?
                   <img
                     key={images[0]}
-                    src={`${api}/images/${images[0]}`}
+                    src={`${api}/images/${previewImage||images[0]}`}
                     className="w-full object-cover  max-h-[200px]"
                     alt=""
                   /> :
