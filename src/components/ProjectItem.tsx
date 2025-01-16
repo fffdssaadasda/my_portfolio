@@ -34,7 +34,7 @@ const ProjectItem = ({
   const hasPermession = data?.user?.email === "jooyosef173@gmail.com";
   useGSAP(() => {
     gsap.to(imgsContainer?.current, {
-      x: index * 170,
+      x: index * 300,
       ease: "expo.out",
       duration: 1,
     });
