@@ -1,30 +1,40 @@
 "use client";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { ReactElement, useRef } from "react";
 import { FaStar } from "react-icons/fa";
-import WrapperSections from "./WrapperSections";
-
-const HeadingTitle = ({ title }: { title: string }) => {
+gsap.registerPlugin(ScrollTrigger);
+interface Props { classname?: string, isStar?: boolean, title: string, id?: string }
+const HeadingTitle = ({ id, title, isStar = true, classname }: Props) => {
+  const titleRef = useRef<HTMLHeadingElement>(null)
   useGSAP(() => {
-    gsap.from(".page div", {
+
+    gsap.from(titleRef?.current?.children!, {
       visibility: "hidden",
       stagger: {
         each: 0.1,
         from: "random",
       },
-      delay: 1
+      scrollTrigger: {
+        trigger: titleRef?.current,
+        start: "-80px 90%",
+        end: "bottom bottom",
+      }
     });
   }, []);
   return (
     <>
-      <section className="flex items-center gap-2">
-        <span className="bg-[#ffee32] flex items-center justify-center text-[22px] max-sm:!text-[14px] rounded-[50%] size-[5vw]">
-          <FaStar />
-        </span>
-        <h2 className="text-[12vw] flex page font-bold leading-[1] tracking-[1px]">
+      <section id={id} className={`flex items-center gap-2 ${classname}`}>
+        {isStar &&
+          <span
+            style={{ animationDuration: "3s" }}
+            className="bg-[#ffee32] animate-spin flex items-center justify-center text-[3vw] max-sm:!text-[24px] max-sm:size-[50px] rounded-[50%] size-[8vw]">
+            <FaStar />
+          </span>}
+        <h2 ref={titleRef} className="text-[12vw] flex page font-bold leading-[1] tracking-[1px]">
           {title.split("").map((el) => (
-            <div key={el + Math.random()}>{el}</div>
+            <div key={el + Math.random() * 10}>{el}</div>
           ))}
         </h2>
       </section>

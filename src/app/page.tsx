@@ -1,16 +1,18 @@
+import AboutMeContent from "@/components/AboutMeContent";
 import DownloadCv from "@/components/Buttons/DownloadCv";
 import SkillsWrapper from "@/components/home/SkillsWrapper";
 import WhoMe from "@/components/home/WhoMe";
-import HoverLink from "@/components/HoverLink";
-import PageTransition from "@/components/PageTransition";
-
+import PortfolioPage from "@/components/PortfolioPage";
+import Testmonials from "@/components/Testmonials";
+import { projects } from "@/constants/Projects";
 const Page = () => {
   return <>
-    <PageTransition href={`/`}>
-      <WhoMe />
-      <SkillsWrapper />
-      <DownloadCv />
-    </PageTransition>
+    <WhoMe />
+    {/* <SkillsWrapper /> */}
+    {/* <DownloadCv /> */}
+    <AboutMeContent />
+    <PortfolioPage projects={projects} />
+    <Testmonials />
   </>
 };
 

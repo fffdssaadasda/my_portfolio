@@ -4,36 +4,27 @@ import WrapperSections from "@/components/WrapperSections";
 import Image from "next/image";
 import ProjectItem from "@/components/ProjectItem";
 import { Project } from "@/types/projectType";
-import { getData } from "@/app/_services/crudApi";
-import { api, mainUrl } from "@/utils/vas";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import Loader from "@/components/Loader";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useSession } from "next-auth/react";
 
 const PortfolioPage = ({ projects }: { projects: Project[] | undefined }) => {
-    const projectType = useSearchParams();
-    const router = useRouter()
-    const pathname = usePathname();
-    const cats = ["All", "Front end", "Back end"]
+    // const router = useRouter()
+    // const pathname = usePathname();
+    // const cats = ["All", "Front end", "Back end"]
     const [idx, setidx] = useState(0);
-    useEffect(() => {
-        router.push(`${pathname}?type=${cats[idx].split(" ").join("_").toLowerCase() || "all"}`)
-    }, [])
-
-    const front = (projects?.filter((e: Project) => e.projectType === "front_end"))
-    const back = (projects?.filter((e: Project) => e.projectType === "back_end"))
+    // useEffect(() => {
+    //     router.push(`${pathname}?type=${cats[idx].split(" ").join("_").toLowerCase() || "all"}`)
+    // }, [])
+    // const front = (projects?.filter((e: Project) => e.projectType === "front_end"))
+    // const back = (projects?.filter((e: Project) => e.projectType === "back_end"))
     // const data: Project[] = await
-    console.log(projectType.get("type"));
-
     return (
         <>
             {/* <PageTransition> */}
             <WrapperSections isFull>
                 <HeadingTitle title="PORTFOLIO" />
             </WrapperSections>
-            <section className="flex items-center my-[25px]  gap-3">
+            {/* <section className="flex items-center my-[25px]  gap-3">
                 {cats.map((e, i) => (
                     <div key={i + e} onClick={() => {
                         setidx(i)
@@ -45,10 +36,10 @@ const PortfolioPage = ({ projects }: { projects: Project[] | undefined }) => {
                         </span>
                     </div>
                 ))}
-            </section>
+            </section> */}
             <section className="grid lg:grid-cols-3 max-sm:grid-cols-1 md:grid-cols-2 gap-3 mt-[15px] items-center">
                 {/* {isLoading && <Loader color="#f00" height="30px" width="30px" />} */}
-                {projectType.get("type") === "all" ? projects?.map((e: Project) => (
+                {/*   {projectType.get("type") === "all" ? projects?.map((e: Project) => (
                     <ProjectItem
                         _id={e._id}
                         date={e.date}
@@ -61,7 +52,6 @@ const PortfolioPage = ({ projects }: { projects: Project[] | undefined }) => {
                     />
                 )) : projectType.get("type") === "front_end" ? <>
                     {!front?.length ? <h2>no {projectType.get("type")} projects</h2> : front.map((e) => (
-
                         <ProjectItem
                             _id={e._id}
                             date={e.date}
@@ -86,8 +76,22 @@ const PortfolioPage = ({ projects }: { projects: Project[] | undefined }) => {
                             link={e.link}
                         />
                     ))}
-                </>}
-
+                </>} */}
+                {projects?.map((e: Project) => (
+                    <ProjectItem
+                        _id={e._id}
+                        date={e.date}
+                        key={e._id || Math.random() * 3}
+                        description="No Description!"
+                        title={e.title}
+                        images={e.images}
+                        technologies={e.technologies}
+                        link={e.link}
+                        github={e.github}
+                        previewImage={e.previewImage}
+                    />
+                ))
+                }
             </section>
 
             {/* </PageTransition> */}

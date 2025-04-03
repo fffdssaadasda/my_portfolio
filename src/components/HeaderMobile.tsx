@@ -4,13 +4,11 @@ import WrapperSections from "./WrapperSections"
 import Link from "next/link"
 import { IoIosClose } from "react-icons/io";
 import gsap from "gsap";
-import { useState } from "react";
-import LinkTransition from "./PageTransition";
-import PageTransition from "./PageTransition";
+import { Dispatch, SetStateAction, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 const HeaderMobile = ({ toggleMenu = false, setMenu }: {
     toggleMenu: boolean,
-    setMenu: () => boolean;
+    setMenu: Dispatch<SetStateAction<boolean>>
 }) => {
     const mouseEnter = () => {
         gsap.from('.lnk h4', {
@@ -18,7 +16,6 @@ const HeaderMobile = ({ toggleMenu = false, setMenu }: {
             stagger: 0.1
         })
     }
-
     return (
         <>
             {toggleMenu &&
@@ -54,7 +51,6 @@ const HeaderMobile = ({ toggleMenu = false, setMenu }: {
                 </section >
             }
         </>
-
     )
 }
 

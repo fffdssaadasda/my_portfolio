@@ -9,19 +9,18 @@ export async function middleware(req: NextRequest) {
   if (nextUrl.pathname === "/login" && isLoggedIn) {
     return NextResponse.redirect(new URL("/", req.nextUrl));
   }
-  if (!isLoggedIn) {
-    return NextResponse.redirect(new URL("/login", req.nextUrl));
-  }
-  if (
-    nextUrl.pathname === "/dashboard" &&
-    !validAdmins.includes(isLoggedIn.user?.email as string)
-  ) {
-    return NextResponse.json({
-      status: "err",
-      message: "SORRY..., You Are Not Site Owner!",
-    });
-  }
- 
+  // if (!isLoggedIn) {
+  //   return NextResponse.redirect(new URL("/login", req.nextUrl));
+  // }
+  // if (
+  //   nextUrl.pathname === "/dashboard" &&
+  //   !validAdmins.includes(isLoggedIn.user?.email as string)
+  // ) {
+  //   return NextResponse.json({
+  //     status: "err",
+  //     message: "SORRY..., You Are Not Site Owner!",
+  //   });
+  // }
 }
 export const config = {
   matcher: ["/"],

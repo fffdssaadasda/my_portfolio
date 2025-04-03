@@ -10,7 +10,7 @@ export interface Plan {
   technologies?: string[];
 }
 
-export const links: string[] = ["about me", "services", "pricing", "portfolio"];
+export const links: string[] = ["about-me", "services", "pricing", "portfolio"];
 export const plans: Plan[] = [
   {
     field: "Front End (Next Js)",

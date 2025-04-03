@@ -9,7 +9,6 @@ export async function getAllProjects() {
     const projects: AxiosResponse<Project[]> = await axios.get(
       `${api}/projects`
     );
-
     return projects.data;
   } catch (err) {
     console.log(err);
