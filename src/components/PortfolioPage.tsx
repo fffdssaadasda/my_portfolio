@@ -37,7 +37,7 @@ const PortfolioPage = ({ projects }: { projects: Project[] | undefined }) => {
                     </div>
                 ))}
             </section> */}
-            <section className="grid lg:grid-cols-3 max-sm:grid-cols-1 md:grid-cols-2 gap-3 mt-[15px] items-center">
+            <section id="portfolio" className="grid lg:grid-cols-3 max-sm:grid-cols-1 md:grid-cols-2 gap-3 mt-[15px] items-center">
                 {/* {isLoading && <Loader color="#f00" height="30px" width="30px" />} */}
                 {/*   {projectType.get("type") === "all" ? projects?.map((e: Project) => (
                     <ProjectItem
