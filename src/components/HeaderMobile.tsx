@@ -34,8 +34,6 @@ const HeaderMobile = ({ toggleMenu = false, setMenu }: {
                                         {links?.map((link, i) => (
                                             <section key={link + i + Math.random()} onClick={() => setMenu(toggleMenu => !toggleMenu)}>
                                                 <div className="text-[26px] overflow-hidden flex items-center gap-[2px] transition-all duration-[200ms] hover:text-[#444] cursor-pointer lnk text-black font-bold">
-                                                    {/* {links.map((el) => (
-                                                    ))} */}
                                                     <a href={`#${link}`} >{link}</a>
                                                 </div>
                                             </section>
