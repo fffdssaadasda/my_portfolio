@@ -6,7 +6,6 @@ import gsap from "gsap";
 import { useRef, useState } from "react";
 import { MdModeEdit } from "react-icons/md";
 import { Project } from "@/types/projectType";
-import { useSession } from "next-auth/react";
 import Link from "next/link";
 import IconsButton from "./Buttons/IconsButton";
 import { FiGithub } from "react-icons/fi";
@@ -23,8 +22,6 @@ const ProjectItem = ({
 }: Project) => {
   const imgsContainer = useRef(null);
   const [index, setIndex] = useState(0);
-  const { data } = useSession()
-  const hasPermession = data?.user?.email === "jooyosef173@gmail.com";
   useGSAP(() => {
     gsap.to(imgsContainer?.current, {
       x: index * 300,
@@ -44,11 +41,7 @@ const ProjectItem = ({
                   <h2 className="font-semibold text-4xl leading-[1] px-[20px] ">
                     {title}
                   </h2>
-                  {hasPermession &&
-                    <Link href={`/projects/${_id}`} className="size-[40px] flex items-center justify-center cursor-pointer hover:text-white hover:bg-green-300 border-green-300 text-green-300 border-solid border-[3px]">
-                      <MdModeEdit className="text-xl" />
-                    </Link>
-                  }
+
                 </div>
                 {/* <h4 className="text-[4vw] max-sm:text-[25px]">{date}</h4> */}
               </div>

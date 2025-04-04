@@ -7,9 +7,9 @@ const Testmonials = () => {
     return (
         <>
             <WrapperSections isFull>
-                <HeadingTitle title="Testmonials" />
+                <HeadingTitle title="testmonials" />
             </WrapperSections>
-            <section className="grid lg:grid-cols-3 max-sm:grid-cols-1 md:grid-cols-2 gap-3 mt-[15px] items-center place-content-center">
+            <section id="testmonials" className="grid lg:grid-cols-3 max-sm:grid-cols-1 md:grid-cols-2 gap-3 mt-[15px] items-center place-content-center">
                 {testmonials?.map((el) => (
                     <TestmonialsItem comment={el.comment} personName={el.personName} rating={el.rating
                     } />

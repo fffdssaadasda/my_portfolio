@@ -1,18 +1,20 @@
-import AboutMeContent from "@/components/AboutMeContent";
-import DownloadCv from "@/components/Buttons/DownloadCv";
-import SkillsWrapper from "@/components/home/SkillsWrapper";
-import WhoMe from "@/components/home/WhoMe";
-import PortfolioPage from "@/components/PortfolioPage";
-import Testmonials from "@/components/Testmonials";
+import Loader from "@/components/Loader";
 import { projects } from "@/constants/Projects";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+const SkillsWrapper = dynamic(() => import("@/components/home/SkillsWrapper"))
+const PortfolioPage = dynamic(() => import("@/components/PortfolioPage"))
+const AboutMeContent = dynamic(() => import("@/components/AboutMeContent"))
+const WhoMe = dynamic(() => import("@/components/home/WhoMe"))
+const Testmonials = dynamic(() => import("@/components/Testmonials"))
 const Page = () => {
   return <>
-    <WhoMe />
-    {/* <SkillsWrapper /> */}
-    {/* <DownloadCv /> */}
-    <AboutMeContent />
-    <PortfolioPage projects={projects} />
-    <Testmonials />
+    <Suspense fallback={<Loader color="#000" height="100px" width="100px" />}>
+      <WhoMe />
+      <AboutMeContent />
+      <PortfolioPage projects={projects} />
+      <Testmonials />
+    </Suspense>
   </>
 };
 

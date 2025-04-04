@@ -5,7 +5,15 @@ import img3 from "@/imgs/portfolio/Screenshot_1.png";
 import img4 from "@/imgs/portfolio/dancing-sawine-9072e4.netlify.app_.png";
 import img5 from "@/imgs/portfolio/www.clikgame.com_.png";
 import img6 from "@/imgs/portfolio/shop0game.com_.png";
+import img7 from "@/imgs/portfolio/mazady-task-iyiz.vercel.app_.png";
+// 
 export const projects: Project[] = [
+  {
+    title: "Task For Company Interview",
+    link: "https://mazady-task-iyiz.vercel.app",
+    technologies: ["Next.js Zustand Typescript Tailwindcss"],
+    previewImage: img7,
+  },
   {
     title: "face book clone",
     link: "https://facelook.surge.sh/",
@@ -75,4 +83,5 @@ export const projects: Project[] = [
     technologies: ["reactjs tailwindcss"],
     previewImage: img6,
   },
+
 ];

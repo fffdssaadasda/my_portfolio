@@ -36,18 +36,18 @@ const AboutMeContent = () => {
             </WrapperSections>
             <div className="flex gap-[2rem] max-md:flex-col ">
                 <div className="md:min-h-[40vh]">
-                    <Image priority width={300} height={500} className="rounded-[50%] object-cover max-md:mx-auto p-2 !size-[200px] " src={myImg.src} alt="YOSEF ARAFA"
+                    <Image priority width={300} height={500} className="rounded-[50%] object-cover max-md:mx-auto p-2 !size-[200px] border-[4px] border-solid border-black" src={myImg.src} alt="YOSEF ARAFA"
                     />
                 </div>
                 <section className="text-[4vw] max-sm:text-[25px] w-full">
                     <WrapperSections isFull >
-                        <i>My Name Is Yosef Arafa</i>
+                        <i className="max-sm:text-3xl font-semibold">My Name Is Yosef Arafa</i>
                     </WrapperSections>
                     {["MERN Stack Developer Next js Node Mongodb", "Hi, My Name Is Yossef", "I'm a front-end developer", "with 3 years experience in Website Development", "I can provide a service and attractive front-end user interfaces to you And Build your digital experience by", "creating a front-end website for your project or business exhibition where you put the works related to your field", " Allowing you to grow your professional personality through multiple means of sharing your projects it.", "I have worked on some successful projects known for their high quality and Detail"].map((letter: string, i: number) => (
                         <div className={`text-3xl mb-2 ${i === 4 && "mt-10"}`} key={letter}> {letter} </div>
                     ))}
                     <WrapperSections isFull>
-                        <i>
+                        <i className="max-sm:text-3xl font-semibold">
                             My Skills :
                         </i>
                     </WrapperSections>
@@ -57,7 +57,7 @@ const AboutMeContent = () => {
                         ))}
                     </section>
                     <WrapperSections isFull>
-                        <i>
+                        <i className="max-sm:text-3xl font-semibold">
                             Contact Me
                         </i>
                     </WrapperSections>

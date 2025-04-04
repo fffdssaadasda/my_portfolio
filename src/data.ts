@@ -10,7 +10,7 @@ export interface Plan {
   technologies?: string[];
 }
 
-export const links: string[] = ["about-me", "services", "pricing", "portfolio"];
+export const links: string[] = ["about-me", "testmonials", "portfolio"];
 export const plans: Plan[] = [
   {
     field: "Front End (Next Js)",
@@ -44,7 +44,7 @@ export const plans: Plan[] = [
         "Clean Code",
         "7 Days deliver",
       ],
-      unActive: ["Optimize Content", "Free Domain", "Creative Animations",],
+      unActive: ["Optimize Content", "Free Domain", "Creative Animations"],
     },
     technologies: ["tailwndcss", "Next Js", "Framer Motion", "GSAP"],
   },

@@ -7,8 +7,6 @@ interface icon {
     link?: string,
 }
 const IconsButton = ({ icon, link }: icon) => {
-    console.log(icon);
-
     const gotToLink = (): void => {
         if (link) location.assign(link!)
     }

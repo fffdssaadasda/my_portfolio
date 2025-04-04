@@ -1,11 +1,10 @@
 "use client"
 import Link from "next/link";
-// import HeaderMobile from "@/components/HeaderMobile"
 import { links } from "@/data";
-import { Dispatch, memo, SetStateAction, useContext, useState } from "react";
+import { memo, useState } from "react";
 import dynamic from "next/dynamic";
-import PageTransition from "./PageTransition";
-import AuthHeaderLinks from "./AuthHeaderLinks";
+import DownloadCv from "./Buttons/DownloadCv";
+
 const HeaderMobile = dynamic(() => import('@/components/HeaderMobile'), { ssr: false })
 const Header = () => {
   const [toggleMenu, setToggleMenu] = useState<boolean>(false);
@@ -29,9 +28,8 @@ const Header = () => {
               </a>
             </section>
           ))}
-
+          <DownloadCv file={"Yosef-Arafa-frontend.pdf"} />
         </section>
-
       </section>
     </section >
   );
