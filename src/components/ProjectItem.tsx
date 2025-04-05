@@ -68,9 +68,7 @@ const ProjectItem = ({
                   <Tag key={Math.random() * 10} tag={tech} />
                 ))}
               </section>
-              {/* {hasPermession &&
-                <DeleteProject id={_id as string} />
-              } */}
+            
               <section className="flex items-center gap-2 mt-5">
                 <IconsButton link={github} icon={<FiGithub />} />
                 <a href={link} target="_blank" className="transition-all duration-[300ms] p-[10px] text-xl block  border-solid border-[#000] rounded-[6px] border-[3px] text-center cursor-pointer sm:hover:text-white sm:hover:bg-black shadow-lg shadow-[#838383] flex-grow">Live Preview</a>

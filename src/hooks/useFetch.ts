@@ -13,10 +13,4 @@ export function useFetch(url: string) {
   return {
     data,
   };
-  // const projects: Project[] = await fetch(
-  //   "http://localhost:5000/projects/"
-  // ).then((d) => d.json());
-  // return {
-  //   projects,
-  // };
 }
