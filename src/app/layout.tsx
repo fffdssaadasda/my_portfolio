@@ -12,6 +12,7 @@ export default function RootLayout({
         <title>الصفحة الرئيسية | Home Page</title>
         <meta name="robots" content="index, follow" />
         <meta name="description" content="this is Yosef Arafa web developer Website" />
+      <meta name="google-site-verification" content="1spN7uxDw3zUIL5dA6RORAgeOdMrvCejm6nXRWpnzH0" />
         <link rel="icon" type="image/x-icon" href="/favicon.svg" />
       </head>
       <body className="p-[2vw]">
