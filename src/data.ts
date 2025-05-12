@@ -49,7 +49,7 @@ export const plans: Plan[] = [
     technologies: ["tailwndcss", "Next Js", "Framer Motion", "GSAP"],
   },
   {
-    field: "Back End (API)",
+    field: "Back End (API)", 
     price: 59.99,
     tags: [
       "Build API",
