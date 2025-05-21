@@ -7,13 +7,15 @@ import Tag from "./Tag"; import { FaLinkedin } from "react-icons/fa6"; import { 
 import { FiGithub } from "react-icons/fi";
 import { IconType } from "react-icons"
 import IconsButton from "./Buttons/IconsButton"
-import { ReactElement } from "react"
+import { ReactElement } from "react";
+import { SiCodewars } from "react-icons/si";
 interface MySocailMedia<T = string> {
     [key: string]: { link: T, Icon: ReactElement<IconType> }
     linkedIn: { link: T, Icon: ReactElement<IconType> };
     whatsapp: { link: T, Icon: ReactElement<IconType> };
     email: { link: T, Icon: ReactElement<IconType> };
     github: { link: T, Icon: ReactElement<IconType> };
+    codewars: { link: T, Icon: ReactElement<IconType> };
 }
 const AboutMeContent = () => {
     const techStack = [
@@ -28,7 +30,10 @@ const AboutMeContent = () => {
         "Mongoose",
         "JWT Authentication"
     ];
-    const socialMedia: MySocailMedia = { linkedIn: { link: "https://www.linkedin.com/in/yosef-arafa-452808283", Icon: <FaLinkedin /> }, email: { link: "jooyosef198@gmail.com", Icon: <IoIosMail /> }, whatsapp: { link: "https://wa.me/201113797735", Icon: <FaWhatsapp /> }, github: { Icon: <FiGithub />, link: "https://github.com/yosefarafa103?tab=repositories" } };
+    const socialMedia: MySocailMedia = { linkedIn: { link: "https://www.linkedin.com/in/yosef-arafa-452808283", Icon: <FaLinkedin /> }, email: { link: "jooyosef198@gmail.com", Icon: <IoIosMail /> }, whatsapp: { link: "https://wa.me/201113797735", Icon: <FaWhatsapp /> }, github: { Icon: <FiGithub />, link: "https://github.com/yosefarafa103?tab=repositories" }, codewars: {
+link: "https://www.codewars.com/users/yosef131",
+        Icon: <SiCodewars />
+    } };
     return (
         <section className="py-4" id="about-me">
             <WrapperSections isFull>
