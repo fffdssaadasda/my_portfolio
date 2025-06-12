@@ -3,12 +3,15 @@ import { StaticImageData } from "next/image";
 export interface Project {
   title: string;
   technologies: string[];
-  images?: [] | string[] | any;
+  images?: undefined | StaticImageData[];
   date?: Date;
   description?: string;
   _id?: string;
   link?: string;
-  projectType?: string;
+  projectType?: "FrontEnd" | "Backend" | "fullStack";
   previewImage?: StaticImageData;
-  github?: string
+  github?: string;
+  githubRepo?: string;
+  frontEndGithubRepo?: string;
+  backEndGithubRepo?: string;
 }

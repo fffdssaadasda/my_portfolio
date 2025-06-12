@@ -1,3 +1,4 @@
+import CodeTabs from "@/components/CodeArea";
 import Loader from "@/components/Loader";
 import { projects } from "@/constants/Projects";
 import dynamic from "next/dynamic";

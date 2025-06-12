@@ -13,13 +13,24 @@ import img11 from "@/imgs/portfolio/download_imgs_free.surge.sh_.png";
 import img12 from "@/imgs/portfolio/hotflix.surge.sh_.png";
 import img13 from "@/imgs/portfolio/bashful-tree-test.surge.sh_.png";
 import img14 from "@/imgs/portfolio/quran-kareem-gules.vercel.app_quran_by-surahs.png";
-//quran-kareem-gules.vercel.app_quran_by-surahs.png
 export const projects: Project[] = [
+  // {
+  //   title: "E-commmerce-fullStack",
+  //   technologies: ["Next tailwindcss node.js Express Stripe"],
+  //   previewImage: img6,
+  //   githubRepo: "chat-app",
+  //   projectType: "fullStack",
+  //   frontEndGithubRepo: "chat-app-ui",
+  //   backEndGithubRepo: "chat-app",
+  // },
+  // ,
   {
     title: "Quran Kareem",
     link: "https://quran-kareem-gules.vercel.app/quran",
     technologies: ["React.js Context API Typescript Tailwindcss Dark Mode"],
     previewImage: img14,
+    projectType: "FrontEnd",
+    frontEndGithubRepo: "quran-kareem",
     github: "https://github.com/yosefarafa103/quran-kareem",
   },
   {
@@ -27,6 +38,8 @@ export const projects: Project[] = [
     link: "https://mazady-task-iyiz.vercel.app",
     technologies: ["Next.js Zustand Typescript Tailwindcss"],
     previewImage: img7,
+    projectType: "FrontEnd",
+    frontEndGithubRepo: "mazady-task",
   },
 
   {
@@ -47,6 +60,7 @@ export const projects: Project[] = [
     technologies: ["React Tailwindcss Framer-Motion"],
     github: "https://github.com/yosefarafa103/sidon-catering",
     previewImage: img10,
+    frontEndGithubRepo: "sidon-catering",
   },
   {
     title: "Images/Videos Download",
@@ -66,6 +80,7 @@ export const projects: Project[] = [
     technologies: ["Next.js Tailwindcss Redux-toolkit"],
     github: "https://github.com/yosefarafa103/payed_app",
     previewImage: img2,
+    frontEndGithubRepo: "payed_app",
   },
 
   {
@@ -74,6 +89,7 @@ export const projects: Project[] = [
     technologies: ["next.js tailwindcss gsap framer-motion"],
     github: "https://github.com/yosefarafa103/da",
     previewImage: img3,
+    frontEndGithubRepo: "da",
   },
   {
     title: "face book clone",
