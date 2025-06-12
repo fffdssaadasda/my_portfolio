@@ -14,7 +14,7 @@ const FileTabItem = ({ type, name, relativePath, content, repoName }: FileItem) 
         try {
             const response: AxiosResponse<GitHubFile[]> = await axios.get(`${relativePath}/${name}`, {
                 headers: {
-                    Authorization: `Bearer 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`
+                    Authorization: `Bearer ${process.env.GHToken}`
                 }
             })
             return response.data
