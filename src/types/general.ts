@@ -8,7 +8,7 @@ export interface GitHubFile {
   git_url: string;
   content: string;
   download_url: string;
-  type: "dir" | "file";
+  type: "file" | "dir";
   _links: {
     self: string;
     git?: string;

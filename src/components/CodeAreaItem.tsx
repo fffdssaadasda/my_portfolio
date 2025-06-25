@@ -80,7 +80,7 @@ const CodeAreaItem = ({ project, setIsOpenCodeArea }: { project: Project, setIsO
                                         }}
                                         className="flex items-center gap-1 p-1.5 cursor-pointer hover:bg-[#fff] rounded-md justify-between">
                                         <div className='flex items-center gap-1'>
-                                            {e.type === "file" ?
+                                            {e.type !== "dir" ?
                                                 <File />
                                                 :
                                                 <Folder />
