@@ -25,7 +25,7 @@ import img21 from "@/imgs/portfolio/quranApp/quran-kareem-gules.vercel.app_quran
 import img22 from "@/imgs/portfolio/quranApp/quran-kareem-gules.vercel.app_quran_by-surahs_2_ayah=22 (1).png";
 import img23 from "@/imgs/portfolio/quranApp/quran-kareem-gules.vercel.app_quran_by-surahs_2_ayah=22.png";
 
-export const projects: Project[] = [
+export const projects: any[] = [
   {
     title: "Cart-App",
     technologies: ["reactjs tailwindcss node.js Express multer cloudinary"],

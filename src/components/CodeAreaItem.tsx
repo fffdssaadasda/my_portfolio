@@ -1,6 +1,6 @@
 "use client"
 import useFileContentStore from "@/stores/fileContentStore"
-import React, { Dispatch, memo, SetStateAction, useEffect, useState } from 'react'
+import React, { Dispatch, memo, SetStateAction, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { Project } from '@/types/projectType'
 import axios, { AxiosResponse } from 'axios'
@@ -13,11 +13,12 @@ import 'highlight.js/styles/atom-one-dark.css';
 
 const CodeAreaItem = ({ project, setIsOpenCodeArea }: { project: Project, setIsOpenCodeArea: Dispatch<SetStateAction<boolean>> }) => {
     const { fileName, content } = useFileContentStore((s) => s)
-    const [t, setT] = useState(() => localStorage.getItem("token") || "")
+    const t = localStorage.getItem("token") || ""
 
     const handelFetchInitalFiles = async () => {
         try {
-            const response: AxiosResponse<GitHubFile[]> = await axios.get(`https://api.github.com/repos/yosefarafa103/${project.githubRepo}/contents`, {
+            const repo = project.githubRepo ?? "";
+            const response: AxiosResponse<GitHubFile[]> = await axios.get(`https://api.github.com/repos/yosefarafa103/${repo}/contents`, {
                 headers: {
                     Authorization: `Bearer ${t}`
                 }
@@ -25,21 +26,21 @@ const CodeAreaItem = ({ project, setIsOpenCodeArea }: { project: Project, setIsO
             return response.data
         } catch (error) {
             console.log(error);
+            return [];
         }
     }
     const { data, isLoading } = useQuery({
-        queryKey: [`project_${project.title}_files`],
+        queryKey: [`project_${project.title ?? "unknown"}_files`],
         queryFn: handelFetchInitalFiles
     });
-
-    console.log(t);
 
     const [expandedFolders, setExpandedFolders] = useState<{ [path: string]: GitHubFile[] | null }>({})
 
     const fetchFolderContents = async (path: string) => {
         try {
+            const repo = project.githubRepo ?? "";
             const response: AxiosResponse<GitHubFile[]> = await axios.get(
-                `https://api.github.com/repos/yosefarafa103/${project.githubRepo}/contents/${path}`,
+                `https://api.github.com/repos/yosefarafa103/${repo}/contents/${path}`,
                 {
                     headers: {
                         Authorization: `Bearer ${t}`
@@ -91,7 +92,7 @@ const CodeAreaItem = ({ project, setIsOpenCodeArea }: { project: Project, setIsO
                                             <ChevronRight className={`${expandedFolders[e.path] ? "rotate-90" : ""}`} />
                                         }
                                     </div>
-                                    {expandedFolders[e.path] && expandedFolders[e.path]?.length! > 0 && (
+                                    {expandedFolders[e.path] && expandedFolders[e.path]?.length > 0 && (
                                         <div className="ml-4 relative after:absolute after:w-[2px] after:h-full after:bg-black after:-left-1.5 after:top-0">
                                             {renderFiles(expandedFolders[e.path]!, e.path)}
                                         </div>
@@ -100,11 +101,11 @@ const CodeAreaItem = ({ project, setIsOpenCodeArea }: { project: Project, setIsO
                             )}
                             {e.type !== 'dir' &&
                                 <FileTabItem
-                                    repoName={project.githubRepo!}
-                                    name={e.name}
-                                    type={e.type}
-                                    content={e.download_url}
-                                    relativePath={e.path} // Pass full file path here
+                                    repoName={project.githubRepo ?? ""}
+                                    name={e.name ?? ""}
+                                    type={e.type ?? ""}
+                                    content={e.download_url ?? ""}
+                                    relativePath={e.path ?? ""}
                                 />
                             }
                         </li >
@@ -126,13 +127,15 @@ const CodeAreaItem = ({ project, setIsOpenCodeArea }: { project: Project, setIsO
                             {data && renderFiles(data)}
                         </div>
                         <div className='flex-grow overflow-y-scroll'>
-                            <small className="text-2xl my-2 p-2 block sticky top-0 left-0 z-[10000] bg-[#eee] ">{fileName}</small>
-                            <Highlight className={`${fileName.split(".")[1]} relative rounded-lg`}>
-                                {(content)}
+                            <small className="text-2xl my-2 p-2 block sticky top-0 left-0 z-[10000] bg-[#eee] ">
+                                {fileName ?? ""}
+                            </small>
+                            <Highlight className={`${(fileName?.split?.(".")[1] ?? "txt")} relative rounded-lg`}>
+                                {content ?? ""}
                             </Highlight>
                             <button
-                                className={`absolute ${project.projectType !== "FrontEnd" ? "top-[110px]" : "top-3"} right-10 z-[10001] bg-white rounded-lg w-[80px] p-2`}
-                                onClick={() => navigator.clipboard.writeText(content)}
+                                className={`absolute ${(project.projectType ?? "") !== "FrontEnd" ? "top-[110px]" : "top-3"} right-10 z-[10001] bg-white rounded-lg w-[80px] p-2`}
+                                onClick={() => navigator.clipboard.writeText(content ?? "")}
                             >
                                 Copy
                             </button>
