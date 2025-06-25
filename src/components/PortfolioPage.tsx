@@ -4,19 +4,30 @@ import WrapperSections from "@/components/WrapperSections";
 import Image from "next/image";
 import ProjectItem from "@/components/ProjectItem";
 import { Project } from "@/types/projectType";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import { useQuery } from "@tanstack/react-query";
 
 const PortfolioPage = ({ projects }: { projects: Project[] | undefined }) => {
     const [idx, setidx] = useState(0);
+    useQuery({
+        queryKey: [`GH_TOKEN`],
+        queryFn: async () => {
+            if (!localStorage.getItem("token")) {
+                let t = (await axios.get("/api")).data.githubToken;
+                localStorage.setItem("token", t);
+                return t;
+            }
+            return localStorage.getItem("token")
+        }
+    });
+
     return (
         <>
             <WrapperSections isFull>
                 <HeadingTitle title="PORTFOLIO" />
             </WrapperSections>
-
             <section id="portfolio" className="grid lg:grid-cols-3 max-sm:grid-cols-1 md:grid-cols-2 gap-3 mt-[15px] items-center">
-
                 {projects?.map((e: Project) => (
                     <ProjectItem
                         _id={e._id}

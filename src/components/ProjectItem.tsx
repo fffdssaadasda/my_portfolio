@@ -76,19 +76,18 @@ const ProjectItem = ({
 
               <section className="flex items-center gap-2 mt-5">
                 <IconsButton link={github} icon={<FiGithub />} />
-                {link ?
+                {link &&
                   <a href={link} target="_blank" className="transition-all duration-[300ms] p-[10px] text-xl block  border-solid border-[#000] rounded-[6px] border-[3px] text-center cursor-pointer sm:hover:text-white sm:hover:bg-black shadow-lg shadow-[#838383] flex-grow">Live Preview</a>
-                  :
-                  <section className="flex items-center gap-3">
-                    {images?.length &&
-                      <span onClick={() => setIsOpenScreensShot(true)} title="Screen Shots" className="size-[40px] bg-gray-200 cursor-pointer p-1 flex items-center justify-center text-sm rounded-md">
-                        <Images />
-                      </span>
-                    }
 
-                  </section>
 
                 }
+                {<section className="flex items-center gap-3">
+                  {images?.length &&
+                    <span onClick={() => setIsOpenScreensShot(true)} title="Screen Shots" className="size-[40px] bg-gray-200 cursor-pointer p-1 flex items-center justify-center text-sm rounded-md">
+                      <Images />
+                    </span>
+                  }
+                </section>}
                 {(frontEndGithubRepo || backEndGithubRepo) &&
                   <span onClick={() => setIsOpenCodeArea(true)} title="source code" className="size-[40px] bg-gray-200 cursor-pointer p-1 flex items-center justify-center text-sm rounded-md">
                     <Code />

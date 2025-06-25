@@ -1,9 +1,12 @@
 import { StaticImageData } from "next/image";
-
+export interface Img {
+  imgDescription?: string;
+  Image?: StaticImageData;
+}
 export interface Project {
   title: string;
   technologies: string[];
-  images?: undefined | StaticImageData[];
+  images?: undefined | Img[];
   date?: Date;
   description?: string;
   _id?: string;

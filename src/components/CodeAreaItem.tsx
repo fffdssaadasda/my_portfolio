@@ -1,6 +1,6 @@
 "use client"
 import useFileContentStore from "@/stores/fileContentStore"
-import React, { Dispatch, memo, SetStateAction, useState } from 'react'
+import React, { Dispatch, memo, SetStateAction, useEffect, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { Project } from '@/types/projectType'
 import axios, { AxiosResponse } from 'axios'
@@ -13,13 +13,13 @@ import 'highlight.js/styles/atom-one-dark.css';
 
 const CodeAreaItem = ({ project, setIsOpenCodeArea }: { project: Project, setIsOpenCodeArea: Dispatch<SetStateAction<boolean>> }) => {
     const { fileName, content } = useFileContentStore((s) => s)
-    console.log(project.projectType,);
+    const [t, setT] = useState(() => localStorage.getItem("token") || "")
 
     const handelFetchInitalFiles = async () => {
         try {
             const response: AxiosResponse<GitHubFile[]> = await axios.get(`https://api.github.com/repos/yosefarafa103/${project.githubRepo}/contents`, {
                 headers: {
-                    Authorization: `Bearer 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`
+                    Authorization: `Bearer ${t}`
                 }
             })
             return response.data
@@ -31,6 +31,9 @@ const CodeAreaItem = ({ project, setIsOpenCodeArea }: { project: Project, setIsO
         queryKey: [`project_${project.title}_files`],
         queryFn: handelFetchInitalFiles
     });
+
+    console.log(t);
+
     const [expandedFolders, setExpandedFolders] = useState<{ [path: string]: GitHubFile[] | null }>({})
 
     const fetchFolderContents = async (path: string) => {
@@ -39,7 +42,8 @@ const CodeAreaItem = ({ project, setIsOpenCodeArea }: { project: Project, setIsO
                 `https://api.github.com/repos/yosefarafa103/${project.githubRepo}/contents/${path}`,
                 {
                     headers: {
-                        Authorization: `Bearer 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`
+                        Authorization: `Bearer ${t}`
+
                     }
                 }
             )

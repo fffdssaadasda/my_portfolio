@@ -40,7 +40,6 @@ const FileTabItem = ({ type, name, relativePath, content, repoName }: FileItem) 
                     setFileContent(atob(response.data.content));
                 } catch (error) {
                     console.log(error);
-
                 }
             }
             } className='flex items-center gap-1 p-1.5 cursor-pointer hover:bg-[#fff] rounded-md justify-between ' >

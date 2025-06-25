@@ -1,16 +1,15 @@
 import { motion } from "framer-motion"
 import WrapperSections from "./WrapperSections"
 import { Dispatch, SetStateAction } from "react"
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 import WrapperResources from "./WrapperResources";
+import { Img } from "@/types/projectType";
 
 interface Props {
     toggleShow: Dispatch<SetStateAction<boolean>>;
-    images?: StaticImageData[]
+    images?: Img[]
 }
 const ScreenShotsContainer = ({ toggleShow, images }: Props) => {
-    console.log(images);
-
     return (
         <WrapperResources>
 
@@ -26,9 +25,12 @@ const ScreenShotsContainer = ({ toggleShow, images }: Props) => {
                     </div>
                 </section>
                 <section className="h-[calc(100svh-200px)] bg-[#fff] ">
-                    <section className="flex gap-2 p-3 max-sm:flex-col h-full overflow-y-scroll">
+                    <section className="flex gap-2 p-3 max-sm:flex-col h-full overflow-y-scroll sm:grid sm:grid-cols-4">
                         {images?.map((e) => (
-                            <img src={e.src} className="sm:size-[150px] p-2 border-solid border-2 border-black rounded-md w-[200px] max-sm:w-full object-cover" alt={`Img_${e.src}`} />
+                            <div className="max-sm:mt-4">
+                                <h3 className="font-bold text-2xl mb-2"> {e.imgDescription} </h3>
+                                <img src={e.Image?.src!} className="w-full p-2 border-solid border-2 border-black rounded-md sm:min-h-[200px] max-sm:w-full object-cover" alt={`Img_$}`} />
+                            </div>
                         ))}
                     </section>
                 </section>
