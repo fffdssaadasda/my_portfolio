@@ -55,7 +55,7 @@ const CodeAreaItem = ({ project, setIsOpenCodeArea }: { project: Project, setIsO
 
     const handleFolderClick = async (path: string) => {
         if (expandedFolders[path]) {
-            setExpandedFolders(prev => ({ ...prev, [path]: null })) // collapse
+            setExpandedFolders(prev => ({ ...prev, [path]: null }))
         } else {
             const contents = await fetchFolderContents(path)
             setExpandedFolders(prev => ({ ...prev, [path]: contents }))
