@@ -55,7 +55,7 @@ const CodeAreaItem = ({ project, setIsOpenCodeArea }: { project: Project, setIsO
 
     const handleFolderClick = async (path: string) => {
         if (expandedFolders[path]) {
-            setExpandedFolders(prev => ({ ...prev, [path]: null }))
+            setExpandedFolders(prev => ({ ...prev, [path]: null })) // collapse
         } else {
             const contents = await fetchFolderContents(path)
             setExpandedFolders(prev => ({ ...prev, [path]: contents }))
@@ -80,7 +80,7 @@ const CodeAreaItem = ({ project, setIsOpenCodeArea }: { project: Project, setIsO
                                         }}
                                         className="flex items-center gap-1 p-1.5 cursor-pointer hover:bg-[#fff] rounded-md justify-between">
                                         <div className='flex items-center gap-1'>
-                                            {e.type !== "dir" ?
+                                            {e.type === "file" ?
                                                 <File />
                                                 :
                                                 <Folder />
