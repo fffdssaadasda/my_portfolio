@@ -13,8 +13,7 @@ import 'highlight.js/styles/atom-one-dark.css';
 
 const CodeAreaItem = ({ project, setIsOpenCodeArea }: { project: Project, setIsOpenCodeArea: Dispatch<SetStateAction<boolean>> }) => {
     const { fileName, content } = useFileContentStore((s) => s)
-    const t = localStorage.getItem("token") || ""
-
+    const [t] = useState(() =>localStorage.getItem("token") || "")
     const handelFetchInitalFiles = async () => {
         try {
             const repo = project.githubRepo ?? "";
