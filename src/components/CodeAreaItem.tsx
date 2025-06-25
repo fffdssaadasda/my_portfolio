@@ -80,7 +80,7 @@ const CodeAreaItem = ({ project, setIsOpenCodeArea }: { project: Project, setIsO
                                         }}
                                         className="flex items-center gap-1 p-1.5 cursor-pointer hover:bg-[#fff] rounded-md justify-between">
                                         <div className='flex items-center gap-1'>
-                                            {e.type === "file" ?
+                                            {e.type !== "dir" ?
                                                 <File />
                                                 :
                                                 <Folder />
@@ -91,7 +91,7 @@ const CodeAreaItem = ({ project, setIsOpenCodeArea }: { project: Project, setIsO
                                             <ChevronRight className={`${expandedFolders[e.path] ? "rotate-90" : ""}`} />
                                         }
                                     </div>
-                                    {expandedFolders[e.path] && expandedFolders[e.path]?.length > 0 && (
+                                    {expandedFolders[e.path] && expandedFolders[e.path]?.length! > 0 && (
                                         <div className="ml-4 relative after:absolute after:w-[2px] after:h-full after:bg-black after:-left-1.5 after:top-0">
                                             {renderFiles(expandedFolders[e.path]!, e.path)}
                                         </div>
