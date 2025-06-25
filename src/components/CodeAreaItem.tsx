@@ -43,7 +43,6 @@ const CodeAreaItem = ({ project, setIsOpenCodeArea }: { project: Project, setIsO
                 {
                     headers: {
                         Authorization: `Bearer ${t}`
-
                     }
                 }
             )
