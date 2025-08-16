@@ -8,7 +8,7 @@ const TestmonialsItem = ({ comment, personName, rating }: Testmonials) => {
             <section >
                 <div className="flex flex-col gap-2">
                     <div className="flex items-centec flex-col">
-                        <div className="flex items-center gap-2 border-b-[3px] border-b-black border-b-solid w-full pb-3 px-[15px] ">
+                        <div className="flex items-center gap-2 border-b-[3px] dark:border-b-indigo-500/50 border-black border-b-solid w-full pb-3 px-[15px] ">
                             <span className="flex items-center justify-center">
                                 <FaUserCircle className="text-3xl" />
                             </span>

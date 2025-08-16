@@ -42,7 +42,7 @@ const FileTabItem = ({ type, name, relativePath, content, repoName }: FileItem) 
                     console.log(error);
                 }
             }
-            } className='flex items-center gap-1 p-1.5 cursor-pointer hover:bg-[#fff] rounded-md justify-between ' >
+            } className='flex items-center gap-1 p-1.5 cursor-pointer hover:bg-accent rounded-md justify-between ' >
                 <div className="flex items-center gap-1 my-1">
                     {type === "file" ?
                         <File />

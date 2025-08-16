@@ -23,9 +23,36 @@ import img19 from "@/imgs/portfolio/quranApp/quran-kareem-gules.vercel.app_quran
 import img20 from "@/imgs/portfolio/quranApp/quran-kareem-gules.vercel.app_quran_by-surahs (2).png";
 import img21 from "@/imgs/portfolio/quranApp/quran-kareem-gules.vercel.app_quran_by-surahs.png";
 import img22 from "@/imgs/portfolio/quranApp/quran-kareem-gules.vercel.app_quran_by-surahs_2_ayah=22 (1).png";
-import img23 from "@/imgs/portfolio/quranApp/quran-kareem-gules.vercel.app_quran_by-surahs_2_ayah=22.png";
+// 
+import img24 from "@/imgs/portfolio/e-learning-eight-tau.vercel.app_courses_PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP (1).png";
+import img25 from "@/imgs/portfolio/e-learning-eight-tau.vercel.app_courses_PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP (2).png";
+import img26 from "@/imgs/portfolio/e-learning-eight-tau.vercel.app_courses_PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP.png";
+import img27 from "@/imgs/portfolio/live-matches-lake.vercel.app_.png";
 
 export const projects: any[] = [
+  {
+    title: "E-Learning",
+    technologies: ["NextJs tailwindcss NextJs_Route_Handlers"],
+    previewImage: img26,
+    githubRepo: "e-learning",
+    projectType: "fullStack",
+    frontEndGithubRepo: "cart-app-ui",
+    link: "https://e-learning-eight-tau.vercel.app",
+    images: [
+      { Image: img24, imgDescription: "Booking Popup" },
+      { Image: img25, imgDescription: "Account Page" },
+      { Image: img26, imgDescription: "Product Page" },
+    ],
+  },
+  {
+    title: "Mobarayat Alyoum",
+    technologies: ["NextJs tailwindcss NextJs_Route_Handlers"],
+    previewImage: img27,
+    githubRepo: "live-matches",
+    projectType: "fullStack",
+    link: "https://live-matches-lake.vercel.app",
+    github: "https://github.com/yosefarafa103/live-matches"
+  },
   {
     title: "Cart-App",
     technologies: ["reactjs tailwindcss node.js Express multer cloudinary"],
@@ -58,7 +85,6 @@ export const projects: any[] = [
       { Image: img20, imgDescription: "Search In Particular" },
       { Image: img21, imgDescription: "Surahs Page" },
       { Image: img22, imgDescription: "Sebha Page" },
-      { Image: img23, imgDescription: "Last Ayah Was Readed Feature" },
     ],
   },
   {

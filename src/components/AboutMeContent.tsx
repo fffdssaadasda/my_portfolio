@@ -30,10 +30,12 @@ const AboutMeContent = () => {
         "Mongoose",
         "JWT Authentication"
     ];
-    const socialMedia: MySocailMedia = { linkedIn: { link: "https://www.linkedin.com/in/yosef-arafa-452808283", Icon: <FaLinkedin /> }, email: { link: "jooyosef198@gmail.com", Icon: <IoIosMail /> }, whatsapp: { link: "https://wa.me/201113797735", Icon: <FaWhatsapp /> }, github: { Icon: <FiGithub />, link: "https://github.com/yosefarafa103?tab=repositories" }, codewars: {
-link: "https://www.codewars.com/users/yosef131",
-        Icon: <SiCodewars />
-    } };
+    const socialMedia: MySocailMedia = {
+        linkedIn: { link: "https://www.linkedin.com/in/yosef-arafa-452808283", Icon: <FaLinkedin /> }, email: { link: "jooyosef198@gmail.com", Icon: <IoIosMail /> }, whatsapp: { link: "https://wa.me/201113797735", Icon: <FaWhatsapp /> }, github: { Icon: <FiGithub />, link: "https://github.com/yosefarafa103?tab=repositories" }, codewars: {
+            link: "https://www.codewars.com/users/yosef131",
+            Icon: <SiCodewars />
+        }
+    };
     return (
         <section className="py-4" id="about-me">
             <WrapperSections isFull>

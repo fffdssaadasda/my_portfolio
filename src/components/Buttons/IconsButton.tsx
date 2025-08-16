@@ -11,7 +11,7 @@ const IconsButton = ({ icon, link }: icon) => {
         if (link) location.assign(link!)
     }
     return (
-        <button onClick={gotToLink} className={`size-[50px] border-[3px] border-solid border-black rounded-md flex items-center justify-center text-2xl transition-all duration-[300ms]  ${!link ? "cursor-not-allowed opacity-[0.2]" : "hover:bg-black hover:text-white"}`}>
+        <button onClick={gotToLink} className={`size-[50px] border-[3px] border-solid border-black rounded-md flex items-center justify-center text-2xl transition-all duration-[300ms]  ${!link ? "cursor-not-allowed opacity-[0.2]" : "hover:bg-accent hover:text-background"}`}>
             {icon}
         </button>
     )

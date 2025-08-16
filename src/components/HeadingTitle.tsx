@@ -30,9 +30,9 @@ const HeadingTitle = ({ id, title, isStar = true, classname }: Props) => {
           <span
             style={{ animationDuration: "3s" }}
             className="bg-[#ffee32] animate-spin flex items-center justify-center text-[3vw] max-sm:!text-[24px] max-sm:size-[50px] rounded-[50%] size-[8vw]">
-            <FaStar />
+            <FaStar className="text-accent" />
           </span>}
-        <h2 ref={titleRef} className="text-[12vw] flex page font-bold leading-[1] tracking-[1px]">
+        <h2 ref={titleRef} className="text-[15vw] text-foreground flex page font-bold leading-[1] tracking-[1px]">
           {title.split("").map((el) => (
             <div key={el + Math.random() * 10}>{el}</div>
           ))}

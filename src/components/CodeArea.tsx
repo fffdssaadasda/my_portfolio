@@ -3,7 +3,7 @@ import Highlight from 'react-highlight'
 import React, { useEffect, useState } from "react";
 import hljs from "highlight.js";
 import 'highlight.js/styles/monokai-sublime.css';
-import { copyToClipboard } from '@/utils/functions';
+import { copyToClipboard } from "@/utils/functions"
 interface FileType {
     [key: string]: {
         language: string;

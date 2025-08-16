@@ -1,5 +1,6 @@
 import CodeTabs from "@/components/CodeArea";
 import Loader from "@/components/Loader";
+import BackgroundMeteors from "@/components/ui/backgroundmeteors";
 import { projects } from "@/constants/Projects";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";

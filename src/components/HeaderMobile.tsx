@@ -15,6 +15,7 @@ const HeaderMobile = ({ toggleMenu = false, setMenu }: {
             stagger: 0.1
         })
     }
+
     return (
         <>
             {toggleMenu &&
@@ -45,6 +46,7 @@ const HeaderMobile = ({ toggleMenu = false, setMenu }: {
                     </section >
                 </section >
             }
+       
         </>
     )
 }
