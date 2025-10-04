@@ -37,7 +37,10 @@ const AboutMeContent = () => {
                         <i className="max-sm:text-3xl font-semibold">My Name Is Yosef Arafa</i>
                     </h3>
                     <section className="px-4">
-                        {["MERN Stack Developer Next js Node Mongodb", "Hi, My Name Is Yossef", "I'm a front-end developer", "with 3 years experience in Website Development", "I can provide a service and attractive front-end user interfaces to you And Build your digital experience by", "creating a front-end website for your project or business exhibition where you put the works related to your field", " Allowing you to grow your professional personality through multiple means of sharing your projects it.", "I have worked on some successful projects known for their high quality and Detail"].map((letter: string, i: number) => (
+                        {[
+                            `I’m Yossef, a creative Full Stack Developer passionate about crafting seamless digital experiences.`,
+                            `With 3+ years of experience in the MERN stack (Next.js, Node.js, MongoDB), I blend design and technology to build elegant, high-performing websites that help brands and individuals shine online.`
+                        ].map((letter: string, i: number) => (
                             <div className={`text-3xl mb-2 ${i === 4 && "mt-10"}`} key={letter}> {letter} </div>
                         ))}
                     </section>
