@@ -6,8 +6,8 @@ import { Project } from '@/types/projectType'
 import axios, { AxiosResponse } from 'axios'
 import { GitHubFile } from '@/types/general'
 import { ChevronRight, File, Folder, X } from 'lucide-react'
-import Loader from './Loader'
-import FileTabItem from './FileTabItem'
+import Loader from './atoms/Loader'
+import FileTabItem from './atoms/FileTabItem'
 import Highlight from "react-highlight"
 import 'highlight.js/styles/atom-one-dark.css';
 

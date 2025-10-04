@@ -1,18 +1,18 @@
 "use client";
-import WrapperSections from "./WrapperSections";
+import WrapperSections from "../atoms/WrapperSections";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef, useState } from "react";
 import { Project } from "@/types/projectType";
-import IconsButton from "./Buttons/IconsButton";
+import IconsButton from "../Buttons/IconsButton";
 import { FiGithub } from "react-icons/fi";
-import Tag from "./Tag";
+import Tag from "../atoms/Tag";
 import { Code, Images } from "lucide-react"
-import ScreenShotsContainer from "./ScreenShotsContainer";
+import ScreenShotsContainer from "../atoms/ScreenShotsContainer";
 import { AnimatePresence } from "framer-motion";
-import CodeAreaItem from "./CodeAreaItem";
-import WrapperResources from "./WrapperResources";
+import CodeAreaItem from "../CodeAreaItem";
+import WrapperResources from "../atoms/WrapperResources";
 const ProjectItem = ({
   images,
   title,

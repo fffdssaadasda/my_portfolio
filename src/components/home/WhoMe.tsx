@@ -1,5 +1,5 @@
 import styles from "@/components/home/home.module.css"
-import HeadingTitle from "../HeadingTitle"
+import HeadingTitle from "../atoms/HeadingTitle"
 import BackgroundMeteors from "../ui/backgroundmeteors"
 
 const WhoMe = () => {
@@ -9,7 +9,8 @@ const WhoMe = () => {
                 <section className="flex flex-col items-center">
                     <div className="sm:py-[40px]  px-[15px]  rounded-[33px] w-full">
                         <h1 className="w-full font-[900] leading-[1] text-[22vw] text-center ">
-                            <HeadingTitle classname="justify-center" isStar={false} title="Dev.Yosef" />
+                            <HeadingTitle classname="justify-center" isStar={false} title="ًHi There!" />
+                            <HeadingTitle classname="justify-center" isStar={false} title="My Name Is Yosef" />
                         </h1>
                         <div className="flex flex-col  max-sm:justify-center gap-2 mt-[15px] pl-4">
                             <h2 className="font-bold max-sm:text-center  text-[30px] sm:text-[5vw] leading-[1]">

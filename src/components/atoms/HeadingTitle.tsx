@@ -22,20 +22,29 @@ const HeadingTitle = ({ id, title, isStar = true, classname }: Props) => {
         end: "bottom bottom",
       }
     });
-  }, []);
+  }, [title]);
   return (
     <>
       <section id={id} className={`flex items-center gap-2 ${classname}`}>
         {isStar &&
           <span
-            style={{ animationDuration: "3s" }}
+            style={{ animationDuration: "5s" }}
             className="bg-[#ffee32] animate-spin flex items-center justify-center text-[3vw] max-sm:!text-[24px] max-sm:size-[50px] rounded-[50%] size-[8vw]">
             <FaStar className="text-accent" />
           </span>}
         <h2 ref={titleRef} className="text-[15vw] text-foreground flex page font-bold leading-[1] tracking-[1px]">
-          {title.split("").map((el) => (
-            <div key={el + Math.random() * 10}>{el}</div>
-          ))}
+          {title.split(" ").map((el) => {
+            return <>
+            <span className="mr-3"></span>
+              {el.split("").map((item) => (
+                <>
+                  <div key={el + Math.random() * 10}>{item}</div>
+                </>
+              ))}
+            </>
+
+
+          })}
         </h2>
       </section>
     </>

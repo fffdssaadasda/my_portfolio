@@ -1,10 +1,9 @@
 import { FaStar } from "react-icons/fa"; import { FaUserCircle } from "react-icons/fa";
 import type { Testmonials, testmonials } from "@/constants/testmonials";
-import WrapperSections from "./WrapperSections";
+import WrapperSections from "./atoms/WrapperSections";
 const TestmonialsItem = ({ comment, personName, rating }: Testmonials) => {
     return (
         <WrapperSections isFull isPadding={false}>
-            {/* border-b-[3px] */}
             <section >
                 <div className="flex flex-col gap-2">
                     <div className="flex items-centec flex-col">

@@ -1,8 +1,8 @@
 "use client"
-import HeadingTitle from "@/components/HeadingTitle";
-import WrapperSections from "@/components/WrapperSections";
+import HeadingTitle from "@/components/atoms/HeadingTitle";
+import WrapperSections from "@/components/atoms/WrapperSections";
 import Image from "next/image";
-import ProjectItem from "@/components/ProjectItem";
+import ProjectItem from "@/components/portfolio/ProjectItem";
 import { Project } from "@/types/projectType";
 import { useEffect, useState } from "react";
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";

@@ -1,6 +1,6 @@
 import { testmonials } from "@/constants/testmonials"
-import HeadingTitle from "./HeadingTitle"
-import WrapperSections from "./WrapperSections"
+import HeadingTitle from "./atoms/HeadingTitle"
+import WrapperSections from "./atoms/WrapperSections"
 import TestmonialsItem from "./TestmonialsItem"
 
 const Testmonials = () => {

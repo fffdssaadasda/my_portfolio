@@ -1,6 +1,6 @@
 "use client"
 import { links } from "@/data"
-import WrapperSections from "./WrapperSections"
+import WrapperSections from "./atoms/WrapperSections"
 import { IoIosClose } from "react-icons/io";
 import gsap from "gsap";
 import { Dispatch, SetStateAction, useState } from "react";

@@ -1,6 +1,6 @@
 "use client"
 import { useFormStatus } from "react-dom"
-import Loader from "../Loader";
+import Loader from "../atoms/Loader";
 const ButtonSubmition = ({ text, isSubmiting }: { text: string, isSubmiting?: boolean }) => {
     const { pending, data } = useFormStatus();
     return (
