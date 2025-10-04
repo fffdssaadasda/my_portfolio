@@ -27,7 +27,7 @@ const Header = () => {
           {links?.map((link) => (
             <section key={link + Math.random()} className="max-sm:hidden">
               <a href={`#${link}`}
-                className="text-[18px] bg-accent-foreground text-accent hover:shadow-xl shadow-[#444] flex transition-all duration-[200ms]  hover:-translate-y-[5px] border-[1px] border-[#000] border-b-[3px] border-solid px-[15px] py-[5px] rounded-[50px]"
+                className="text-[18px]  text-accent-foreground hover:shadow-xl flex transition-all duration-[200ms] hover:-translate-y-[2px] border-[1px] border-primary border-b-[3px] border-solid px-[15px] py-[5px] rounded-lg"
               >
                 {link}
               </a>
