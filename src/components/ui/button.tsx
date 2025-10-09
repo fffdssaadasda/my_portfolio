@@ -19,6 +19,8 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        purple: "text-[16px] px-[15px] bg-indigo-700 py-[8px] text-white border-[1px] border-primary border-b-[3px]",
+        navButton: "hover:-translate-y-[2px] transition-all duration-300 border-[1px] border-primary border-b-[3px] border-solid px-[15px] py-[5px] text-lg font-semibold"
       },
       size: {
         default: "h-9 px-4 py-2",

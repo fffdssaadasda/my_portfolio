@@ -4,9 +4,9 @@ import { links } from "@/data";
 import { memo, useState } from "react";
 import dynamic from "next/dynamic";
 import DownloadCv from "./Buttons/DownloadCv";
-import { Toggle } from "./ui/toggle";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { Button } from "./ui/button";
 
 const HeaderMobile = dynamic(() => import('@/components/HeaderMobile'), { ssr: false })
 const Header = () => {
@@ -14,11 +14,11 @@ const Header = () => {
   const { theme, setTheme } = useTheme()
   const [isDark, setIsDark] = useState(theme === "dark");
   return (
-    <section className="fixed rounded-[20px] top-[15px] z-[9999] bg-card -translate-x-1/2 left-1/2 w-[95%] h-[85px]">
+    <section className="sticky rounded-[20px] max-sm:top-[5px] top-0 z-[9999] bg-card h-[85px]">
       <HeaderMobile setMenu={setToggleMenu} toggleMenu={toggleMenu} />
-      <section className="border-solid flex items-center justify-between p-[25px] py-[15px] border-[3px] rounded-[inherit] border-foreground  font-semibold">
-        <Link href={`/`} className="bg-foreground block rounded-md size-[50px]" >
-        </Link>
+      <section className="border-solid flex items-center justify-between p-[25px] py-[15px] border-[3px] rounded-[inherit] border-primary dark:border-accent font-semibold">
+        <Link href={`/`} className="bg-foreground block rounded-md size-[50px]" />
+
         <section className="flex items-center gap-[10px]"
         >
           <div onClick={() => setToggleMenu(prev => !prev)} className="text-[20px] cursor-pointer sm:hidden border-[1px] border-accent text-accent-foreground bg-background border-b-[3px] border-solid p-[15px] rounded-[50px] py-[5px]">
@@ -26,24 +26,25 @@ const Header = () => {
           </div>
           {links?.map((link) => (
             <section key={link + Math.random()} className="max-sm:hidden">
-              <a href={`#${link}`}
-                className="text-[18px]  text-accent-foreground hover:shadow-xl flex transition-all duration-[200ms] hover:-translate-y-[2px] border-[1px] border-primary border-b-[3px] border-solid px-[15px] py-[5px] rounded-lg"
-              >
-                {link}
-              </a>
+              <Button asChild variant="navButton">
+                <a href={`#${link}`}
+                >
+                  {link}
+                </a>
+              </Button>
+
             </section>
           ))}
-
           <DownloadCv file={"Yosef-Arafa.pdf"} />
-          <Toggle className="bg-white" onClick={() => {
+          <Button size="icon" className="bg-primary text-white border-2 border-accent" onClick={() => {
             setIsDark(!isDark)
             setTheme(isDark ? "light" : "dark")
           }} aria-label="Toggle Theme">
             {isDark ?
               <Moon className="text-black" /> :
-              <Sun className="text-black" />
+              <Sun className="text-white" />
             }
-          </Toggle>
+          </Button>
 
         </section>
       </section>

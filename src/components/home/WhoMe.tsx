@@ -1,4 +1,3 @@
-import styles from "@/components/home/home.module.css"
 import HeadingTitle from "../atoms/HeadingTitle"
 import BackgroundMeteors from "../ui/backgroundmeteors"
 

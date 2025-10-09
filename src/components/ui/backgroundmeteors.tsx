@@ -61,7 +61,7 @@ export default function BackgroundMeteors({
   }, []);
 
   return (
-    <div className="relative flex max-smh-[50vh] h-svh w-full items-center justify-center overflow-hidden bg-white dark:bg-black">
+    <div className="relative -mt-12 flex max-sm-[100svh] h-svh w-full items-center justify-center overflow-hidden bg-white dark:bg-black">
       <div
         className="absolute inset-0"
         style={{
